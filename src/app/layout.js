@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Navlinks from "@/components/Navlinks";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         <Header></Header>
         <Navlinks></Navlinks>
+        
         {children}
         </body>
     </html>
