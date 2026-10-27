@@ -14,7 +14,7 @@ const Hero = () => {
             {banglaDate}
           </span>
 
-          <h1 className="mt-2 text-2xl font-black text-black sm:text-2xl pb-2">
+          <h1 className="mt-5 text-2xl font-black text-black sm:text-2xl pb-2">
             আজকের বাজারের দাম এক নজরে
           </h1>
 
@@ -25,7 +25,7 @@ const Hero = () => {
           </p>
 
           <Link
-            href=""
+            href="#all-products"
             className="mt-3 inline-block rounded-md bg-green-700 px-3 py-2 text-[12px] font-semibold text-white shadow-sm transition hover:bg-green-800"
           >
             সব পণ্য দেখুন

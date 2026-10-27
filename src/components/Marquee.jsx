@@ -11,7 +11,7 @@ const Marquee = async () => {
     <div className='overflow-hidden border-y border-gray-100 bg-white py-2'>
          <MarqueeText className="py-1" direction="right" duration={10} pauseOnHover={true}>
         <Link href={`/products/${products.id}`} className="inline-flex shrink-0 items-center gap-3 whitespace-nowrap px-6 text-xs transition hover:bg-gray-50" >{
-             products.map((product => <span key='product.id' href={`/products/${product.id}`} >
+             products.map((product => <span key={product.id} href={`/products/${product.id}`} >
             
              <span>{product.image}</span>
 
@@ -39,7 +39,7 @@ const Marquee = async () => {
             )}
 
             {product.change.dir === "flat" && (
-              <span className="text-gray-400">— ০%</span>
+              <span className="text-gray-400">— ০.০%</span>
             )}
 
 
