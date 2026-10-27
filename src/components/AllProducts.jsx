@@ -20,7 +20,7 @@ export default function AllProducts({ products }) {
           return (
             <Link
               key={product.id}
-              href={`/products/${product.id}`}
+              href={`/product/${product.id}`}
               className="rounded-lg border border-gray-200 bg-white p-3 hover:shadow-sm"
             >
               <div className="flex items-center gap-3">
