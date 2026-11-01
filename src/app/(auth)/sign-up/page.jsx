@@ -50,6 +50,18 @@ const onSubmit = async (e) => {
   }
 };
 
+  const handleGoogleSignUp = async () => {
+  const data = await authClient.signIn.social({
+    provider: "google",
+  });
+}
+
+const handleGithubSignUp = async () => {
+    const data = await authClient.signIn.social({
+        provider: "github"
+    })
+}
+
   return (
     <div className="min-h-screen bg-[#f1f6f1] px-4 py-10">
       <div className="mx-auto mb-6 text-center">
@@ -131,9 +143,9 @@ const onSubmit = async (e) => {
         </div>
 
         <div className="grid grid-cols-2 gap-2">
-          <button
+          <button onClick={handleGoogleSignUp}
             type="button"
-            className="flex h-10 items-center justify-center gap-2 rounded-md border border-gray-200 text-xs hover:bg-gray-50"
+            className=" hover:cursor-pointer flex h-10 items-center justify-center gap-2 rounded-md border border-gray-200 text-xs hover:bg-gray-50"
           >
             <Image
               src="/iconofgoogle.png"
@@ -145,9 +157,9 @@ const onSubmit = async (e) => {
             Google দিয়ে সাইন আপ
           </button>
 
-          <button
+          <button onClick={handleGithubSignUp}
             type="button"
-            className="flex h-10 items-center justify-center gap-2 rounded-md border border-gray-200 text-xs hover:bg-gray-50"
+            className=" hover:cursor-pointer flex h-10 items-center justify-center gap-2 rounded-md border border-gray-200 text-xs hover:bg-gray-50"
           >
             <Image src="/github.png" alt="GitHub" width={16} height={16} />
             GitHub দিয়ে সাইন আপ
