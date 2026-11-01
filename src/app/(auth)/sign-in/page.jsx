@@ -47,6 +47,12 @@ const SignInPage = () => {
   });
 };
 
+const handleGithubSignIn = async () => {
+    const data = await authClient.signIn.social({
+        provider: "github"
+    })
+}
+
   return (
     <div className="min-h-screen bg-[#f1f6f1] px-4 py-10">
       <div className="mx-auto mb-6 text-center">
@@ -116,7 +122,7 @@ const SignInPage = () => {
             Google দিয়ে চালিয়ে যান
           </button>
 
-          <button
+          <button onClick={handleGithubSignIn}
             type="button"
             className=" hover:cursor-pointer flex h-10 items-center justify-center gap-2 rounded-md border border-gray-200 text-xs hover:bg-gray-50"
           >
