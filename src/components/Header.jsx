@@ -1,4 +1,5 @@
 import Link from "next/link";
+import UserInfo from "./UserInfo";
 
 const Header = () => {
   const banglaDate = new Date().toLocaleDateString("bn-BD", {
@@ -26,20 +27,7 @@ const Header = () => {
         </Link>
 
         {/* Authentication buttons */}
-        <div className="flex items-center gap-3 sm:gap-5">
-          <Link
-            href="/signin"
-            className="text-xs font-semibold text-black transition hover:text-green-700 sm:text-sm"
-          >
-            সাইন ইন
-          </Link>
-          <Link
-            href="/signup"
-            className="rounded-md bg-green-700 px-3 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-green-800 sm:px-4 sm:text-sm"
-          >
-            সাইন আপ
-          </Link>
-        </div>
+        <UserInfo></UserInfo>
       </div>
     </header>
   );

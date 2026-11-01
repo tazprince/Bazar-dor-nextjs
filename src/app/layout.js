@@ -2,7 +2,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Navlinks from "@/components/Navlinks";
+import Marquee from "@/components/Marquee";
 import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 
 const geistSans = Geist({
@@ -30,8 +32,10 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         <Header></Header>
         <Navlinks></Navlinks>
-        
+        <Marquee></Marquee>
+        <Toaster position="top-center" />
         {children}
+        
         <Footer />
         </body>
     </html>

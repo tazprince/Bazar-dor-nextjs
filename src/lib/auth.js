@@ -6,9 +6,15 @@ const client = new MongoClient(process.env.MONGODB_URL);
 const db = client.db("bazardor-nextjs");
 
 export const auth = betterAuth({
-     emailAndPassword: { 
-    enabled: true, 
+  emailAndPassword: {
+    enabled: true,
   },
+      socialProviders: {
+        google: { 
+            clientId: process.env.GOOGLE_CLIENT_ID, 
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
+        }, 
+    },
   database: mongodbAdapter(db, {
     client,
   }),
