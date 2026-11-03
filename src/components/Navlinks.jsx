@@ -9,7 +9,7 @@ const NavLinks = async () => {
   const navs = data;
 
   return (
-    <nav className="border-t border-gray-100 bg-white">
+    <nav className=" border-t border-gray-100 bg-white">
       <div className="mx-auto flex max-w-7xl items-center gap-1 overflow-x-auto px-3 py-2 sm:gap-2 sm:px-4 sm:py-3 scrollbar-hide">
         {navs.map((nav) => (
           <Link

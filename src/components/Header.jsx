@@ -7,7 +7,7 @@ const Header = () => {
   });
 
   return (
-    <header className="border-b border-gray-200 bg-white">
+    <header className=" border-b border-gray-200 bg-white">
       <div className="mx-auto flex max-w-7xl flex-col gap-3 px-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-4">
         {/* Logo and date */}
         <Link href="/" className="flex items-center gap-2.5">
