@@ -10,12 +10,12 @@ const NavLinks = async () => {
 
   return (
     <nav className="border-t border-gray-100 bg-white">
-      <div className="mx-auto flex max-w-7xl px-4 py-3">
+      <div className="mx-auto flex max-w-7xl items-center gap-1 overflow-x-auto px-3 py-2 sm:gap-2 sm:px-4 sm:py-3 scrollbar-hide">
         {navs.map((nav) => (
           <Link
             key={nav.id}
             href={`/category/${nav.slug}`}
-            className="flex shrink-0 items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold text-black transition hover:bg-green-50 hover:text-green-700"
+            className="flex shrink-0 items-center rounded-md gap-1.5 px-2.5 py-2 text-xs sm:gap-2 sm:px-3 sm:text-sm font-semibold text-black transition hover:bg-green-50 hover:text-green-700"
           >
             <span>{nav.icon}</span>
             <span>{nav.nameBn}</span>

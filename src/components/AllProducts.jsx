@@ -8,7 +8,7 @@ export default function AllProducts({ products }) {
     dozen: "ডজন",
   };
   return (
-    <section id="all-products" className="mx-auto max-w-7xl scroll-mt-4 px-4 py-8">
+    <section id="সব-পণ্য" className="mx-auto max-w-7xl scroll-mt-4 px-4 py-8">
       <h2 className="mb-4 text-base font-bold text-gray-800">সব পণ্য</h2>
       <p className="mt-1 mb-2 text-[12px] text-gray-500">
         মোট {new Intl.NumberFormat("bn-BD").format(Number(products.length))} টি পণ্য

@@ -1,6 +1,12 @@
 import Link from "next/link";
 
-const ProductInfo = ({ product }) => {
+const ProductInfo = async ({ product }) => {
+   const res = await fetch(
+    `https://openapi.programming-hero.com/api/bazardor/categories/${product.category}`
+  );
+
+  const category = await res.json();
+  
   const {
     nameBn,
     categoryNameBn,
@@ -9,8 +15,6 @@ const ProductInfo = ({ product }) => {
     unit,
     today,
     yesterday,
-    lastWeek,
-    lastMonth,
     change,
     markets,
   } = product;
@@ -28,13 +32,26 @@ const ProductInfo = ({ product }) => {
 
   return (
     <div className="space-y-5">
-      {/* Back link */}
-      <Link
-        href="/"
-        className="inline-block text-sm text-green-700 hover:underline"
-      >
-        ← হোমে ফিরে যান
-      </Link>
+      {/* Breadcrumb */}
+      <div className="mb-6 flex flex-wrap items-center gap-2 text-sm text-gray-600">
+        <Link href="/" className="hover:text-green-700">
+          হোম
+        </Link>
+
+        <span>›</span>
+
+        <Link
+          key={product.id}
+          href={`/category/${category.slug}`}
+          className="hover:text-green-700"
+        >
+          {product.categoryNameBn}
+        </Link>
+
+        <span>›</span>
+
+        <span className="font-medium text-gray-800">{product.nameBn}</span>
+      </div>
 
       {/* Product header */}
       <section className="flex flex-col gap-4 rounded-2xl border border-gray-200 bg-white p-5 sm:flex-row sm:items-center sm:justify-between ">
@@ -113,9 +130,7 @@ const ProductInfo = ({ product }) => {
             <p className="mt-1 text-2xl font-bold text-green-600">
               {formatPrice(minPrice)}
             </p>
-            <p className="mt-1 text-xs text-gray-500">
-              সবচেয়ে কম দামের বাজার
-            </p>
+            <p className="mt-1 text-xs text-gray-500">সবচেয়ে কম দামের বাজার</p>
           </div>
 
           <div className="rounded-xl border border-gray-200 p-4">
@@ -136,7 +151,6 @@ const ProductInfo = ({ product }) => {
             <p className="mt-1 text-xs text-gray-500">প্রতি কেজি-এর হিসাবে</p>
           </div>
         </div>
-
       </section>
 
       {/* Market prices table */}
@@ -146,7 +160,7 @@ const ProductInfo = ({ product }) => {
         </h2>
 
         <div className="overflow-x-auto rounded-xl border border-gray-200">
-          <table className="w-full min-w-[600px] text-left text-sm">
+          <table className="w-full min-w-150 text-left text-sm">
             <thead className="bg-gray-50 text-gray-600">
               <tr>
                 <th className="px-4 py-3">বাজার</th>

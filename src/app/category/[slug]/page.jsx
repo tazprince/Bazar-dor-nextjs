@@ -1,4 +1,5 @@
 import CategoryProducts from "@/components/CategoryProducts";
+import { notFound } from "next/navigation";
 
 const CategoryPage = async ({ params }) => {
   const { slug } = await params;
@@ -9,10 +10,14 @@ const CategoryPage = async ({ params }) => {
   );
 
   if (!response.ok) {
-    throw new Error("Products fetch failed");
+    notFound();
   }
 
   const products = await response.json();
+
+  if(!products || products.length === 0){
+    notFound();
+  }
 
   return <CategoryProducts products={products} />;
 };

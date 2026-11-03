@@ -79,7 +79,7 @@ const UserInfo = () => {
           )}
         </>
       ) : (
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <Link
             href="/sign-in"
             className="text-xs font-semibold text-gray-800 transition hover:text-green-700 sm:text-sm"

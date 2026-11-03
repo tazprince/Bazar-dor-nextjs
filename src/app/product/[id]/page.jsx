@@ -1,5 +1,5 @@
-
 import ProductInfo from "@/components/ProductDetails/ProductInfo";
+import { notFound } from "next/navigation";
 
 const ProductDetailsPage = async ({ params }) => {
   const { id } = await params;
@@ -10,8 +10,10 @@ const ProductDetailsPage = async ({ params }) => {
   );
 
   const product = await response.json();
-
-  // console.log("Product:", product);
+  
+  if(!product || !product.id){
+    notFound();
+  }
 
   return (
     <main className="min-h-screen bg-[#f0f5f1] px-4 py-8">
