@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       {/* This is Home page */}
-      <Hero></Hero>
+        <Hero />
       <ProductsGrid></ProductsGrid>
     </div>
     

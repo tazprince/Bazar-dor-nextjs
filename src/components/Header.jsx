@@ -1,9 +1,14 @@
+"use client";
 import Link from "next/link";
 import UserInfo from "./UserInfo";
+// import { useSyncExternalStore } from "react";
 
 const Header = () => {
-  const banglaDate = new Date().toLocaleDateString("bn-BD", {
-    dateStyle: "full",
+ const banglaDate = new Date().toLocaleDateString("bn-BD", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
   });
 
   return (

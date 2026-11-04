@@ -1,12 +1,16 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+//banglaDate
 const Hero = () => {
-  const banglaDate = new Date().toLocaleDateString("bn-BD", {
-    dateStyle: "full",
+   const banglaDate = new Date().toLocaleDateString("bn-BD", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
   });
-
   return (
     <section className="mx-auto mt-3 sm:mt-4 max-w-7xl px-3 sm:px-4">
       <div className="flex min-h-32.5 flex-col items-center justify-between gap-4 rounded-xl border border-gray-200 bg-[#f8faf8] px-4 py-5 sm:flex-row sm:px-7 sm:py-5">
