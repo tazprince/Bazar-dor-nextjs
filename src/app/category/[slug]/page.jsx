@@ -6,7 +6,9 @@ const CategoryPage = async ({ params }) => {
 
   const response = await fetch(
     `https://openapi.programming-hero.com/api/bazardor/products?category=${slug}`,
-    { cache: "no-store" }
+     {
+      cache: "force-cache",
+    }
   );
 
   if (!response.ok) {

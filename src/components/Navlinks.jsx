@@ -2,7 +2,10 @@ import Link from "next/link";
 
 const NavLinks = async () => {
   const res = await fetch(
-    "https://openapi.programming-hero.com/api/bazardor/categories"
+    "https://openapi.programming-hero.com/api/bazardor/categories",
+    {
+      cache: "force-cache",
+    },
   );
 
   const data = await res.json();

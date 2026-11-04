@@ -4,9 +4,9 @@ import MarqueeText from "react-marquee-text";
 import "react-marquee-text/dist/styles.css";
 
 const Marquee = async () => {
-  "use cache";
   const res = await fetch(
     "https://openapi.programming-hero.com/api/bazardor/products",
+    { cache: "force-cache", }
   );
   const products = await res.json();
 

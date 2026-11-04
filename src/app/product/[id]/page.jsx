@@ -6,7 +6,7 @@ const ProductDetailsPage = async ({ params }) => {
 
   const response = await fetch(
     `https://openapi.programming-hero.com/api/bazardor/products/${id}`,
-    { cache: "no-store" }
+    { cache: "force-cache", }
   );
 
   const product = await response.json();

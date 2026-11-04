@@ -1,16 +1,9 @@
-"use client";
 import Link from "next/link";
 import UserInfo from "./UserInfo";
-// import { useSyncExternalStore } from "react";
+import { Suspense } from "react";
+import BanglaDate from "./BanglaDate";
 
 const Header = () => {
- const banglaDate = new Date().toLocaleDateString("bn-BD", {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-
   return (
     <header className=" border-b border-gray-200 bg-white">
       <div className="mx-auto flex max-w-7xl flex-col gap-3 px-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-4">
@@ -24,10 +17,17 @@ const Header = () => {
             <span className="block text-lg sm:text-xl font-extrabold leading-6 text-gray-900">
               বাজার দর
             </span>
-
-            <span className="block text-[11px] text-gray-500">
-              {banglaDate}
-            </span>
+            
+            {/* deployment issue for date so i change code  */}
+            <Suspense
+              fallback={
+                <span className="block text-[11px] text-gray-500">
+                  বাংলা তারিখ
+                </span>
+              }
+            >
+              <BanglaDate className="block text-[11px] text-gray-500" />
+            </Suspense>
           </span>
         </Link>
 

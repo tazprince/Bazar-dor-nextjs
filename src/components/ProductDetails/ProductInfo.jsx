@@ -2,7 +2,8 @@ import Link from "next/link";
 
 const ProductInfo = async ({ product }) => {
    const res = await fetch(
-    `https://openapi.programming-hero.com/api/bazardor/categories/${product.category}`
+    `https://openapi.programming-hero.com/api/bazardor/categories/${product.category}`,
+    { cache: "force-cache", }
   );
 
   const category = await res.json();
